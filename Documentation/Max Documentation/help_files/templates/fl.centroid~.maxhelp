@@ -220,8 +220,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 8,
-                            "minor": 0,
-                            "revision": 6,
+                            "minor": 1,
+                            "revision": 8,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -262,6 +262,7 @@
                         "style": "",
                         "subpatcher_template": "",
                         "showontab": 1,
+                        "assistshowspatchername": 0,
                         "boxes": [],
                         "lines": []
                     },
@@ -290,8 +291,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 8,
-                            "minor": 0,
-                            "revision": 6,
+                            "minor": 1,
+                            "revision": 8,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -332,16 +333,34 @@
                         "style": "",
                         "subpatcher_template": "",
                         "showontab": 1,
+                        "assistshowspatchername": 0,
                         "boxes": [
                             {
                                 "box": {
+                                    "id": "obj-6",
+                                    "linecount": 3,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        71.541748046875,
+                                        520.0,
+                                        555.0,
+                                        50.0
+                                    ],
+                                    "text": "The centroid is the point at which the 'centre of mass' in the frame is accumulated.\n\nThis could be applied to the magnitudes of an FFT to look at the spectral centroid of a sound."
+                                }
+                            },
+                            {
+                                "box": {
                                     "id": "obj-4",
+                                    "local": 1,
                                     "maxclass": "ezdac~",
                                     "numinlets": 2,
                                     "numoutlets": 0,
                                     "patching_rect": [
                                         14.0,
-                                        495.0,
+                                        520.0,
                                         45.0,
                                         45.0
                                     ]
@@ -390,7 +409,7 @@
                                     "numoutlets": 0,
                                     "patching_rect": [
                                         366.666748046875,
-                                        156.63333129882812,
+                                        153.63333129882812,
                                         106.0,
                                         21.0
                                     ],
@@ -443,6 +462,7 @@
                             {
                                 "box": {
                                     "id": "obj-63",
+                                    "ignoreclick": 1,
                                     "maxclass": "multislider",
                                     "numinlets": 1,
                                     "numoutlets": 2,
@@ -452,7 +472,7 @@
                                     ],
                                     "parameter_enable": 0,
                                     "patching_rect": [
-                                        14.0,
+                                        15.0,
                                         392.13336181640625,
                                         260.0,
                                         90.0
@@ -474,7 +494,7 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        14.0,
+                                        15.0,
                                         360.0,
                                         62.0,
                                         23.0
@@ -486,7 +506,7 @@
                                 "box": {
                                     "id": "obj-43",
                                     "maxclass": "newobj",
-                                    "numinlets": 2,
+                                    "numinlets": 3,
                                     "numoutlets": 1,
                                     "outlettype": [
                                         ""
@@ -528,7 +548,7 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        14.0,
+                                        15.0,
                                         319.5,
                                         50.0,
                                         23.0
@@ -595,12 +615,12 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [
-                                        376.7167663574219,
+                                        375.7167663574219,
                                         460.13336181640625,
-                                        71.0,
+                                        161.0,
                                         21.0
                                     ],
-                                    "text": "Centroid"
+                                    "text": "Centroid (in frame indices)"
                                 }
                             },
                             {
@@ -623,6 +643,12 @@
                             },
                             {
                                 "box": {
+                                    "color": [
+                                        0.952941,
+                                        0.564706,
+                                        0.098039,
+                                        1.0
+                                    ],
                                     "id": "obj-29",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -772,7 +798,7 @@
                                         0
                                     ],
                                     "midpoints": [
-                                        23.5,
+                                        24.5,
                                         352.0,
                                         289.9667663574219,
                                         352.0
@@ -883,14 +909,14 @@
                             {
                                 "name": "newobjYellow-1",
                                 "default": {
-                                    "fontsize": [
-                                        12.059008
-                                    ],
                                     "accentcolor": [
                                         0.82517,
                                         0.78181,
                                         0.059545,
                                         1.0
+                                    ],
+                                    "fontsize": [
+                                        12.059008
                                     ]
                                 },
                                 "parentstyle": "",

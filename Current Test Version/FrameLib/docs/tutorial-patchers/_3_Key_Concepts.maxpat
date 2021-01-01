@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,7 @@
 		"subpatcher_template" : "default",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
+		"assistshowspatchername" : 0,
 		"title" : "Tutorial 3: Key Concepts",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -51,7 +52,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -85,6 +86,7 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Types of Frames",
 						"boxes" : [ 							{
 								"box" : 								{
@@ -149,11 +151,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 204.0, 431.0, 323.0, 60.0 ],
+									"patching_rect" : [ 204.0, 437.5, 418.0, 47.0 ],
 									"text" : "fl.ramp~ takes the scalar frame from fl.map~, but it doesn't care what the contents of the frame are and interprets it as a trigger frame. Another option would be to use the output of fl.tag~ as a trigger frame too."
 								}
 
@@ -161,11 +163,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 4,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 263.0, 356.0, 270.0, 60.0 ],
+									"patching_rect" : [ 263.0, 369.5, 415.0, 33.0 ],
 									"text" : "Take the value from fl.map~ (some number between 1 and 15) and create a 'tagged' frame which will modify the length parameter of fl.ramp~"
 								}
 
@@ -205,7 +207,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 15.0, 540.0, 165.0, 90.0 ],
 									"setminmax" : [ 0.0, 1.0 ],
-									"size" : 3,
+									"size" : 9,
 									"slidercolor" : [ 0.996078431372549, 0.313725490196078, 0.313725490196078, 1.0 ]
 								}
 
@@ -238,7 +240,7 @@
 								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 145.0, 375.0, 78.0, 22.0 ],
@@ -313,7 +315,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 60.0, 735.0, 150.0 ],
-									"text" : "The inputs and ouputs to FrameLib objects are 'frames'. There are two basic types of frames in FrameLib. \n\nThe first is the most common and consists of a vector of numeric values. The length of this vector can andy length from zero upwards, so a scalar is simply a single valued frame of length 1. A frame with no values (zero length) is used as a trigger message, and is analogous to the bang message in Max.\n\nThe second type of frame is a 'tagged' frame. This is used primarily to transfer or set parameter values in FrameLib. A single frame can contain any number of tags (or parameter names) followed by their values. This allows you set multiple parameters with a single frame. There are methods for concatenating multiple tagged frames into a single frame containing many parameters and assocated values so it is never necessary for an object to have more than one parameter update input."
+									"text" : "The inputs and ouputs to FrameLib objects are 'frames'. There are two basic types of frames in FrameLib. \n\nThe first is the most common and consists of a vector of numeric values. The length of this vector can be any length from zero upwards, so a scalar is simply a single valued frame of length 1. A frame with no values (zero length) is used as a trigger message, and is analogous to the bang message in Max.\n\nThe second type of frame is a 'tagged' frame. This is used primarily to transfer or set parameter values in FrameLib. A single frame can contain any number of tags (or parameter names) followed by their values. This allows you set multiple parameters with a single frame. There are methods for concatenating multiple tagged frames into a single frame containing many parameters and assocated values so it is never necessary for an object to have more than one parameter update input."
 								}
 
 							}
@@ -453,8 +455,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -513,7 +515,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -547,6 +549,7 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Fixed Inputs",
 						"boxes" : [ 							{
 								"box" : 								{
@@ -556,7 +559,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 450.0, 375.0, 70.0, 22.0 ],
+									"patching_rect" : [ 450.0, 405.0, 70.0, 22.0 ],
 									"text" : "loadmess 0"
 								}
 
@@ -570,7 +573,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 150.0, 420.0, 50.0, 22.0 ]
+									"patching_rect" : [ 150.0, 450.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -581,7 +584,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 375.0, 58.0, 22.0 ],
+									"patching_rect" : [ 15.0, 405.0, 58.0, 22.0 ],
 									"text" : "fl.tomax~"
 								}
 
@@ -595,7 +598,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 15.0, 420.0, 58.0, 22.0 ]
+									"patching_rect" : [ 15.0, 450.0, 58.0, 22.0 ]
 								}
 
 							}
@@ -606,7 +609,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 285.0, 75.0, 22.0 ],
+									"patching_rect" : [ 15.0, 315.0, 75.0, 22.0 ],
 									"text" : "fl.register~ 1"
 								}
 
@@ -618,7 +621,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 225.0, 51.0, 22.0 ],
+									"patching_rect" : [ 15.0, 255.0, 51.0, 22.0 ],
 									"text" : "fl.once~"
 								}
 
@@ -630,8 +633,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 330.0, 96.0, 22.0 ],
-									"text" : "fl.divide~ [2] 100"
+									"patching_rect" : [ 15.0, 360.0, 96.0, 22.0 ],
+									"text" : "fl./~ [2] 100"
 								}
 
 							}
@@ -642,7 +645,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 255.0, 285.0, 75.0, 22.0 ],
+									"patching_rect" : [ 255.0, 315.0, 75.0, 22.0 ],
 									"text" : "fl.register~ 2"
 								}
 
@@ -654,7 +657,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 150.0, 375.0, 58.0, 22.0 ],
+									"patching_rect" : [ 150.0, 405.0, 58.0, 22.0 ],
 									"text" : "fl.tomax~"
 								}
 
@@ -666,8 +669,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 150.0, 330.0, 124.0, 22.0 ],
-									"text" : "fl.times~ [1] 2.3"
+									"patching_rect" : [ 150.0, 360.0, 124.0, 22.0 ],
+									"text" : "fl.*~ [1] 2.3"
 								}
 
 							}
@@ -678,7 +681,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 305.5, 420.0, 88.5, 22.0 ],
+									"patching_rect" : [ 305.5, 450.0, 88.5, 22.0 ],
 									"text" : "0"
 								}
 
@@ -690,7 +693,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 375.0, 375.0, 58.0, 22.0 ],
+									"patching_rect" : [ 375.0, 405.0, 58.0, 22.0 ],
 									"text" : "fl.tomax~"
 								}
 
@@ -702,8 +705,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 375.0, 330.0, 87.0, 22.0 ],
-									"text" : "fl.plus~ [2] 100"
+									"patching_rect" : [ 375.0, 360.0, 87.0, 22.0 ],
+									"text" : "fl.+~ [2] 100"
 								}
 
 							}
@@ -740,7 +743,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 375.0, 285.0, 112.0, 22.0 ],
+									"patching_rect" : [ 375.0, 315.0, 112.0, 22.0 ],
 									"text" : "fl.register~ [2] 3 4 5"
 								}
 
@@ -750,12 +753,12 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 13.0,
 									"id" : "obj-13",
-									"linecount" : 9,
+									"linecount" : 11,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 60.0, 728.0, 147.0 ],
-									"text" : "FrameLib objects in Max support configuration of fixed numeric values at object instantation that are used for any subsequent calculations, rather than values updated at frame rate. The simplest example is with the binary operators which allow you to type the value of either input in as one or more arguments to the object. This directly mimics the behaviour of Max objects.\n\nIf you need to set a specific input, there is a notation designed for this:\n\n[input number] <value(s)>\n\nExamples follow below."
+									"patching_rect" : [ 15.0, 60.0, 728.0, 178.0 ],
+									"text" : "FrameLib objects in Max support configuration of fixed numeric values at object instantation that are used for any subsequent calculations, rather than values updated at frame rate. The simplest example is with the binary operators which allow you to type the value of either input in as one or more arguments to the object. This directly mimics the behaviour of Max objects.\n\nIf you need to set a specific input, there is a notation designed for this:\n\n[input number] <value(s)>\n\nWhere [input number] is the input number counting starting from 1.\n\nExamples follow below."
 								}
 
 							}
@@ -795,7 +798,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 24.5, 270.0, 264.5, 270.0 ],
+									"midpoints" : [ 24.5, 300.0, 264.5, 300.0 ],
 									"order" : 1,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -804,7 +807,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"midpoints" : [ 24.5, 249.0, 24.5, 249.0 ],
+									"midpoints" : [ 24.5, 279.0, 24.5, 279.0 ],
 									"order" : 2,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -813,7 +816,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 24.5, 270.0, 384.5, 270.0 ],
+									"midpoints" : [ 24.5, 300.0, 384.5, 300.0 ],
 									"order" : 0,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -851,7 +854,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 459.5, 453.0, 84.0, 453.0, 84.0, 414.0, 24.5, 414.0 ],
+									"midpoints" : [ 459.5, 483.0, 84.0, 483.0, 84.0, 444.0, 24.5, 444.0 ],
 									"order" : 2,
 									"source" : [ "obj-3", 0 ]
 								}
@@ -861,7 +864,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 459.5, 453.0, 210.0, 453.0, 210.0, 414.0, 159.5, 414.0 ],
+									"midpoints" : [ 459.5, 483.0, 210.0, 483.0, 210.0, 444.0, 159.5, 444.0 ],
 									"order" : 1,
 									"source" : [ "obj-3", 0 ]
 								}
@@ -871,7 +874,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 1 ],
 									"hidden" : 1,
-									"midpoints" : [ 459.5, 414.0, 384.5, 414.0 ],
+									"midpoints" : [ 459.5, 444.0, 384.5, 444.0 ],
 									"order" : 0,
 									"source" : [ "obj-3", 0 ]
 								}
@@ -949,8 +952,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1009,7 +1012,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1043,6 +1046,7 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Parameters and Tagging",
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1144,7 +1148,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 15.0, 525.0, 157.75, 51.0 ],
 									"setminmax" : [ 0.0, 1.0 ],
-									"size" : 13
+									"size" : 11
 								}
 
 							}
@@ -1167,12 +1171,12 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 13.0,
 									"id" : "obj-18",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 54.0, 738.0, 69.0 ],
-									"text" : "Modifiying parameters for a FrameLib object after instantiation is made possible via the 'parameter update' inlet. This inlet receives 'tagged frames' at frame rate to modify the configuration of an object on a per frame basis. Some parameters cannot be changed via the parameter update inlet and these are made more explicit in the help files and through familiarisation. Often, these parameters allocate memory or deal with the creation of inlets for objects where this feature is variable."
+									"patching_rect" : [ 15.0, 54.0, 738.0, 84.0 ],
+									"text" : "Modifiying parameters for a FrameLib object after instantiation is made possible via the 'parameter update' inlet. This inlet receives tagged frames at frame rate to modify the configuration of an object on a per frame basis. Some parameters cannot be changed via the parameter update inlet but only at instantiation and these are made explicit in the help files and through familiarisation. Often, these parameters allocate memory or deal with the creation of inlets for objects where this feature is variable."
 								}
 
 							}
@@ -1359,7 +1363,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 68.0, 295.5, 61.0, 23.0 ],
-									"text" : "fl.plus~ 1"
+									"text" : "fl.+~ 1"
 								}
 
 							}
@@ -1385,7 +1389,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 68.0, 250.5, 75.0, 23.0 ],
-									"text" : "fl.times~ 20"
+									"text" : "fl.*~ 20"
 								}
 
 							}
@@ -1407,7 +1411,7 @@
 									"fontsize" : 13.0,
 									"id" : "obj-40",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 68.0, 385.5, 83.0, 23.0 ],
@@ -1539,8 +1543,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1599,7 +1603,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1633,16 +1637,25 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Multiple Tags",
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-5",
+									"lockeddragscroll" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fl-mono-h.maxpat",
+									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 195.0, 480.0, 29.5, 22.0 ],
-									"text" : "info"
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 20.0, 540.0, 90.0, 45.0 ],
+									"viewvisibility" : 1
 								}
 
 							}
@@ -1659,26 +1672,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 555.0, 47.0, 22.0 ],
-									"text" : "*~ 0.35"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-38",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 408.0, 376.5, 217.0, 50.0 ],
-									"text" : "Two values are tagged separataely with fl.tag~ and combined with fl.combinetags~."
+									"patching_rect" : [ 357.0, 383.25, 259.0, 36.0 ],
+									"text" : "Two values are tagged seperately with fl.tag~ and combined with fl.combinetags~."
 								}
 
 							}
@@ -1689,7 +1690,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 284.0, 316.0, 334.0, 21.0 ],
+									"patching_rect" : [ 282.0, 316.0, 334.0, 21.0 ],
 									"text" : "Generate some random values to be set as parameters"
 								}
 
@@ -1719,7 +1720,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 3,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1752,6 +1753,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "default",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontsize" : 13.0,
@@ -1873,7 +1875,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 146.0, 314.0, 136.0, 23.0 ],
+									"patching_rect" : [ 144.0, 314.0, 136.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1893,7 +1895,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 510.0, 49.0, 23.0 ],
+									"patching_rect" : [ 20.0, 495.0, 49.0, 23.0 ],
 									"text" : "fl.sink~"
 								}
 
@@ -1903,10 +1905,10 @@
 									"fontsize" : 13.0,
 									"id" : "obj-11",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 263.0, 374.0, 66.0, 23.0 ],
+									"patching_rect" : [ 261.0, 374.0, 66.0, 23.0 ],
 									"text" : "fl.tag~ res"
 								}
 
@@ -1919,7 +1921,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 146.0, 405.0, 136.0, 23.0 ],
+									"patching_rect" : [ 144.0, 405.0, 136.0, 23.0 ],
 									"text" : "fl.combinetags~"
 								}
 
@@ -1929,10 +1931,10 @@
 									"fontsize" : 13.0,
 									"id" : "obj-9",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 146.0, 374.0, 70.0, 23.0 ],
+									"patching_rect" : [ 144.0, 374.0, 70.0, 23.0 ],
 									"text" : "fl.tag~ freq"
 								}
 
@@ -1945,7 +1947,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 458.0, 143.0, 23.0 ],
+									"patching_rect" : [ 20.0, 450.0, 143.0, 23.0 ],
 									"text" : "fl.svf~ /mode bandpass"
 								}
 
@@ -1959,8 +1961,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 53.0, 597.0, 53.0 ],
-									"text" : "FrameLib objects only accept one connection to every inlet (with the exception of fl.frommax~). There is a maximum of one 'paramaeter update' inlet per FrameLib object, and so tagged frames must be concatenated prior to updating the object's configuration."
+									"patching_rect" : [ 15.0, 53.0, 690.0, 53.0 ],
+									"text" : "FrameLib objects only accept one connection to between frame inlets and outlets (this limitation doesn't apply to audio inlets or outlets, or inlets taking messages, such as that on fl.frommax~). There is only one 'parameter update' inlet per FrameLib object, and so tagged frames must be concatenated prior to updating the object's configuration."
 								}
 
 							}
@@ -2004,7 +2006,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 620.0, 316.0, 20.0, 20.0 ],
+									"patching_rect" : [ 618.0, 316.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -2025,7 +2027,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 627.0, 391.5, 20.0, 20.0 ],
+									"patching_rect" : [ 618.0, 391.25, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -2058,14 +2060,14 @@
 									"angle" : 270.0,
 									"background" : 1,
 									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
-									"border" : 3,
-									"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"border" : 2,
+									"bordercolor" : [ 0.439216, 0.74902, 0.254902, 1.0 ],
 									"id" : "obj-13",
 									"maxclass" : "panel",
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 138.0, 367.5, 268.0, 68.0 ],
+									"patching_rect" : [ 136.0, 367.5, 209.0, 67.5 ],
 									"proportion" : 0.5
 								}
 
@@ -2088,8 +2090,8 @@
 									"angle" : 270.0,
 									"background" : 1,
 									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
-									"border" : 3,
-									"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"border" : 2,
+									"bordercolor" : [ 0.439216, 0.74902, 0.254902, 1.0 ],
 									"id" : "obj-15",
 									"maxclass" : "panel",
 									"mode" : 0,
@@ -2109,7 +2111,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 254.0, 79.0, 23.0 ],
-									"text" : "fl.times~ 0.5"
+									"text" : "fl.*~ 0.5"
 								}
 
 							}
@@ -2178,6 +2180,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
+									"midpoints" : [ 29.5, 300.0, 153.5, 300.0 ],
 									"order" : 0,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -2192,14 +2195,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -2229,7 +2225,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 1 ],
 									"order" : 0,
-									"source" : [ "obj-4", 0 ]
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -2237,7 +2233,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"order" : 1,
-									"source" : [ "obj-4", 0 ]
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -2327,8 +2323,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2436,7 +2432,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2470,15 +2466,17 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "How to Get Help",
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 95.5, 165.0, 71.0, 22.0 ],
+									"patching_rect" : [ 80.5, 165.0, 76.0, 23.0 ],
 									"text" : "fromsymbol"
 								}
 
@@ -2518,20 +2516,21 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 195.0, 120.0, 309.0, 23.0 ],
+									"patching_rect" : [ 155.5, 120.0, 132.0, 23.0 ],
 									"text" : "Prints the description"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"hidden" : 1,
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 195.0, 72.0, 22.0 ],
+									"patching_rect" : [ 195.0, 195.0, 77.0, 23.0 ],
 									"text" : "prepend set"
 								}
 
@@ -2571,13 +2570,14 @@
  ]
 									}
 ,
+									"fontsize" : 13.0,
 									"hidden" : 1,
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 180.0, 165.0, 167.0, 22.0 ],
+									"patching_rect" : [ 195.0, 165.0, 180.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 1,
 										"precision" : 6
@@ -2589,7 +2589,7 @@
 							}
 , 							{
 								"box" : 								{
-									"fontsize" : 20.0,
+									"fontsize" : 13.0,
 									"id" : "obj-2",
 									"items" : [ "info", ",", "info description", ",", "info inputs", ",", "info outputs", ",", "info io", ",", "info parameters", ",", "info quick" ],
 									"maxclass" : "umenu",
@@ -2597,7 +2597,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 15.0, 120.0, 180.0, 31.0 ]
+									"patching_rect" : [ 30.0, 120.0, 120.0, 23.0 ]
 								}
 
 							}
@@ -2627,7 +2627,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 3,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2660,6 +2660,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "default",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-13",
@@ -2781,13 +2782,13 @@
 							}
 , 							{
 								"box" : 								{
-									"fontsize" : 15.0,
+									"fontsize" : 13.0,
 									"id" : "obj-15",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 210.0, 81.0, 25.0 ],
+									"patching_rect" : [ 80.5, 210.0, 72.0, 23.0 ],
 									"text" : "fl.random~"
 								}
 
@@ -2797,12 +2798,12 @@
 									"fontname" : "Lato",
 									"fontsize" : 13.0,
 									"id" : "obj-6",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 53.0, 515.0, 53.0 ],
-									"text" : "Like all Max objects there are help files that can be accessed for reference. You can also send FrameLib objects some reserved messages which post extra information to the max console. "
+									"patching_rect" : [ 15.0, 53.0, 630.0, 38.0 ],
+									"text" : "Like all Max objects there are help files that can be accessed for reference. You can also send FrameLib objects the info message which post requested information about the object to the max console. "
 								}
 
 							}
@@ -2823,7 +2824,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 189.5, 249.0, 0.0, 249.0, 0.0, 117.0, 204.5, 117.0 ],
+									"midpoints" : [ 204.5, 249.0, 15.0, 249.0, 15.0, 113.0, 165.0, 113.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -2846,7 +2847,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
-									"midpoints" : [ 105.0, 201.0, 24.5, 201.0 ],
+									"midpoints" : [ 90.0, 201.0, 90.0, 201.0 ],
 									"source" : [ "obj-24", 0 ]
 								}
 
@@ -2917,8 +2918,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2977,7 +2978,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3011,68 +3012,16 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Setting Parameters",
 						"boxes" : [ 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-3",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 181.0, 480.0, 30.0, 21.0 ],
-									"text" : "==",
-									"textjustification" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 213.0, 480.0, 146.0, 23.0 ],
-									"text" : "fl.random~ [2] 10 0 [1] 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 480.0, 146.0, 23.0 ],
-									"text" : "fl.random~ [2] 10 0 [1] 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 13.0,
-									"id" : "obj-8",
-									"linecount" : 6,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 375.0, 735.0, 94.0 ],
-									"text" : "3. Addressing by parameter number\n\nParameters can also have a specific parameter set by using the inlet  number inside square brackets. Again, below is an example of how this is put into practice with fl.random~. The caveat with this method, is that you cannot use strings to set parameters. Notice how there is no [2] samples, to set the units parameter. Instead you must use the index (0 counting) of the possible options for that parameter."
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-7",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 338.0, 331.0, 30.0, 21.0 ],
+									"patching_rect" : [ 338.0, 361.0, 30.0, 21.0 ],
 									"text" : "==",
 									"textjustification" : 1
 								}
@@ -3086,8 +3035,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 369.0, 330.0, 322.0, 23.0 ],
-									"text" : "fl.random~ /units samples /mode requested /length 10"
+									"patching_rect" : [ 369.0, 360.0, 268.0, 23.0 ],
+									"text" : "fl.random~ /units samples /mode 0 /length 10"
 								}
 
 							}
@@ -3099,7 +3048,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.0, 330.0, 322.0, 23.0 ],
+									"patching_rect" : [ 15.0, 360.0, 322.0, 23.0 ],
 									"text" : "fl.random~ /mode requested /length 10 /units samples"
 								}
 
@@ -3109,12 +3058,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-12",
-									"linecount" : 4,
+									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 240.0, 735.0, 65.0 ],
-									"text" : "2. /parameter <value>\n\nParameters can also be addressed by prefixing a forward slash (/) to the name. Again, let's configure the same example from above in this style. Note, the /parameter syntax can be in any order."
+									"patching_rect" : [ 15.0, 240.0, 735.0, 108.0 ],
+									"text" : "2. /parameter <value>\n\nParameters can also be addressed by prefixing a forward slash (/) to the name. Again, let's configure the same example from above in this style. Note, the /parameter syntax can be in any order.\n\nIf the parameter you are addressing is an enumerated parameter, such as the fl.random~ /mode, this can be set with the numerical value of the selection counting from 0."
 								}
 
 							}
@@ -3167,7 +3116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 54.0, 735.0, 123.0 ],
-									"text" : "There are numerous ways to set parameters with FrameLib objects. Each has its benefit, so it is worth becoming familiar with how each method works.\n\n1. Positional arguments\n\nfl.random~ has three parameters: Mode, Length and Units. We can address each one by its precedence. Parameters with enumerated options can also have the options addressed with numbers counting from 0. The example below demonstrates two ways of initialising the three parameters of fl.random~ in a Max style."
+									"text" : "There are two ways to set parameters with FrameLib objects. Each has its benefit, so it is worth becoming familiar with how each method works.\n\n1. Positional arguments\n\nfl.random~ has three parameters: Mode, Length and Units. We can address each one by its precedence. Parameters with enumerated options can also have the options addressed with numbers counting from 0. The example below demonstrates two ways of initialising the three parameters of fl.random~ in a Max style."
 								}
 
 							}
@@ -3256,8 +3205,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3316,7 +3265,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3350,8 +3299,22 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Schedulers and Timing",
 						"boxes" : [ 							{
+								"box" : 								{
+									"color" : [ 0.772549019607843, 0.607843137254902, 0.745098039215686, 1.0 ],
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 15.0, 255.0, 54.0, 22.0 ],
+									"text" : "fl.chain~"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"hidden" : 1,
 									"id" : "obj-3",
@@ -3390,19 +3353,19 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -539.0, 0.0 ],
+									"offset" : [ -540.0, -450.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 3,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 79.0, 1372.0, 787.0 ],
+										"rect" : [ 754.0, 79.0, 652.0, 787.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3429,7 +3392,20 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 555.0, 78.0, 88.0, 22.0 ],
+													"text" : "fl.audiotrigger~"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-37",
 													"maxclass" : "newobj",
@@ -3444,12 +3420,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-35",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 1169.0, 611.0, 105.0, 22.0 ],
-													"text" : "offset -539 -451"
+													"patching_rect" : [ 1169.0, 611.0, 68.0, 35.0 ],
+													"text" : "offset -540 -450"
 												}
 
 											}
@@ -3461,7 +3438,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1155.0, 587.0, 75.0, 22.0 ],
-													"text" : "offset -539 0"
+													"text" : "offset -540 0"
 												}
 
 											}
@@ -3473,7 +3450,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1147.0, 555.0, 75.0, 22.0 ],
-													"text" : "offset 0 -586"
+													"text" : "offset 0 -585"
 												}
 
 											}
@@ -3485,7 +3462,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1136.0, 525.0, 75.0, 22.0 ],
-													"text" : "offset 0 -301"
+													"text" : "offset 0 -300"
 												}
 
 											}
@@ -3517,13 +3494,13 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 13.0,
+													"fontsize" : 12.0,
 													"id" : "obj-26",
-													"linecount" : 7,
+													"linecount" : 6,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 810.0, 45.0, 225.0, 108.0 ],
+													"patching_rect" : [ 810.0, 45.0, 225.0, 87.0 ],
 													"text" : "fl.chain~ creates new trigger frames according to a series of times given as an input. By clicking the bang at the top, fl.audiotrigger~ creates a trigger frame which provides a series of timings as another vector to fl.chain~."
 												}
 
@@ -3554,19 +3531,6 @@
 											}
 , 											{
 												"box" : 												{
-													"color" : [ 0.654901960784314, 0.572549019607843, 0.376470588235294, 1.0 ],
-													"id" : "obj-24",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 75.0, 88.0, 22.0 ],
-													"text" : "fl.audiotrigger~"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"fontface" : 1,
 													"fontname" : "Lato",
 													"fontsize" : 16.0,
@@ -3586,7 +3550,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 105.0, 240.0, 22.0 ],
+													"patching_rect" : [ 555.0, 111.0, 240.0, 22.0 ],
 													"text" : "fl.register~ 1.2 2.2 3.4 5.1 6 6.1 6.2 6.3 6.4"
 												}
 
@@ -3599,7 +3563,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 609.625, 240.0, 24.0, 24.0 ]
+													"patching_rect" : [ 610.0, 250.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -3612,7 +3576,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 555.0, 240.0, 50.0, 22.0 ]
+													"patching_rect" : [ 555.0, 250.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -3623,7 +3587,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 195.0, 58.0, 22.0 ],
+													"patching_rect" : [ 555.0, 210.0, 58.0, 22.0 ],
 													"text" : "fl.tomax~"
 												}
 
@@ -3636,8 +3600,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 555.0, 135.0, 212.0, 22.0 ],
-													"text" : "fl.chain~ /time absolute /units seconds"
+													"patching_rect" : [ 555.0, 144.0, 205.0, 22.0 ],
+													"text" : "fl.chain~ /time relative /units seconds"
 												}
 
 											}
@@ -3648,7 +3612,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 165.0, 66.0, 22.0 ],
+													"patching_rect" : [ 555.0, 177.0, 66.0, 22.0 ],
 													"text" : "fl.random~"
 												}
 
@@ -3735,13 +3699,13 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 13.0,
+													"fontsize" : 12.0,
 													"id" : "obj-2",
 													"linecount" : 3,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 120.0, 45.0, 225.0, 50.0 ],
+													"patching_rect" : [ 120.0, 45.0, 225.0, 47.0 ],
 													"text" : "fl.interval~ is the metro of FrameLib. This scheduler produces trigger frames at a regular interval."
 												}
 
@@ -3790,7 +3754,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 525.0, 88.0, 22.0 ],
+													"patching_rect" : [ 555.0, 528.0, 88.0, 22.0 ],
 													"text" : "fl.audiotrigger~"
 												}
 
@@ -3802,14 +3766,14 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 555.0, 66.0, 22.0 ],
+													"patching_rect" : [ 555.0, 561.0, 66.0, 22.0 ],
 													"text" : "fl.random~"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 18.368250990506205,
+													"fontsize" : 12.0,
 													"format" : 6,
 													"id" : "obj-7",
 													"maxclass" : "flonum",
@@ -3817,7 +3781,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 555.0, 615.0, 93.0, 29.0 ]
+													"patching_rect" : [ 555.0, 630.0, 79.0, 22.0 ]
 												}
 
 											}
@@ -3840,7 +3804,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 555.0, 587.0, 58.0, 22.0 ],
+													"patching_rect" : [ 555.0, 594.0, 58.0, 22.0 ],
 													"text" : "fl.tomax~"
 												}
 
@@ -3853,7 +3817,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 69.625, 705.0, 24.0, 24.0 ]
+													"patching_rect" : [ 69.625, 709.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -3866,7 +3830,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 15.0, 705.0, 50.0, 22.0 ]
+													"patching_rect" : [ 15.0, 709.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -3877,7 +3841,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 660.0, 58.0, 22.0 ],
+													"patching_rect" : [ 15.0, 666.0, 58.0, 22.0 ],
 													"text" : "fl.tomax~"
 												}
 
@@ -3902,7 +3866,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 630.0, 66.0, 22.0 ],
+													"patching_rect" : [ 15.0, 633.0, 66.0, 22.0 ],
 													"text" : "fl.random~"
 												}
 
@@ -3915,7 +3879,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 69.625, 421.0, 24.0, 24.0 ]
+													"patching_rect" : [ 69.625, 424.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -3928,7 +3892,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 15.0, 421.0, 50.0, 22.0 ]
+													"patching_rect" : [ 15.0, 424.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -3939,7 +3903,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 375.0, 58.0, 22.0 ],
+													"patching_rect" : [ 15.0, 381.0, 58.0, 22.0 ],
 													"text" : "fl.tomax~"
 												}
 
@@ -3964,7 +3928,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 345.0, 66.0, 22.0 ],
+													"patching_rect" : [ 15.0, 348.0, 66.0, 22.0 ],
 													"text" : "fl.random~"
 												}
 
@@ -3977,7 +3941,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 69.625, 120.0, 24.0, 24.0 ]
+													"patching_rect" : [ 69.625, 124.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -3990,7 +3954,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 15.0, 120.0, 50.0, 22.0 ]
+													"patching_rect" : [ 15.0, 124.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -4001,7 +3965,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 78.0, 58.0, 22.0 ],
+													"patching_rect" : [ 15.0, 81.0, 58.0, 22.0 ],
 													"text" : "fl.tomax~"
 												}
 
@@ -4026,13 +3990,20 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 45.0, 66.0, 22.0 ],
+													"patching_rect" : [ 15.0, 48.0, 66.0, 22.0 ],
 													"text" : "fl.random~"
 												}
 
 											}
  ],
 										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
 													"source" : [ "obj-15", 0 ]
@@ -4042,6 +4013,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-16", 0 ],
+													"midpoints" : [ 564.5, 240.0, 619.5, 240.0 ],
 													"order" : 0,
 													"source" : [ "obj-18", 0 ]
 												}
@@ -4078,15 +4050,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-24", 0 ],
+													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-23", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-15", 0 ],
-													"source" : [ "obj-24", 0 ]
 												}
 
 											}
@@ -4115,6 +4080,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-45", 0 ],
+													"midpoints" : [ 24.5, 113.0, 79.125, 113.0 ],
 													"order" : 0,
 													"source" : [ "obj-31", 0 ]
 												}
@@ -4193,6 +4159,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-46", 0 ],
+													"midpoints" : [ 24.5, 413.0, 79.125, 413.0 ],
 													"order" : 0,
 													"source" : [ "obj-48", 0 ]
 												}
@@ -4223,6 +4190,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-52", 0 ],
+													"midpoints" : [ 24.5, 698.0, 79.125, 698.0 ],
 													"order" : 0,
 													"source" : [ "obj-54", 0 ]
 												}
@@ -4350,8 +4318,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4394,12 +4362,12 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Lato Regular",
+									"fontname" : "Arial",
 									"id" : "obj-63",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 300.0, 511.0, 21.0 ],
+									"patching_rect" : [ 15.0, 300.0, 301.0, 20.0 ],
 									"text" : "Here are some examples of these schedulers in action!"
 								}
 
@@ -4429,14 +4397,14 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Lato Regular",
+									"fontname" : "Arial",
 									"id" : "obj-26",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 60.0, 563.0, 35.0 ],
-									"text" : "There are several schedulers in FrameLib that are available to you. Each scheduler works different, but always deals with creating trigger frames at a particular point in time."
+									"patching_rect" : [ 15.0, 60.0, 576.0, 33.0 ],
+									"text" : "There are several schedulers in FrameLib that are available to you. Each scheduler works differently, but always deals with creating trigger frames at a particular point in time."
 								}
 
 							}
@@ -4447,7 +4415,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 95.0, 142.5, 358.0, 21.0 ],
+									"patching_rect" : [ 95.0, 142.5, 348.0, 21.0 ],
 									"text" : "Schedules one frame at the start of each Max audio vector."
 								}
 
@@ -4473,7 +4441,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 73.75, 255.0, 318.0, 21.0 ],
+									"patching_rect" : [ 73.75, 255.0, 317.0, 21.0 ],
 									"text" : "Schedules trigger frames in the future at a given time."
 								}
 
@@ -4485,7 +4453,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 115.0, 217.5, 298.0, 21.0 ],
+									"patching_rect" : [ 115.0, 217.5, 292.0, 21.0 ],
 									"text" : "Turns non-zero MSP samples into trigger frames."
 								}
 
@@ -4497,7 +4465,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 73.75, 180.0, 465.950012000000015, 21.0 ],
+									"patching_rect" : [ 73.75, 180.0, 272.0, 21.0 ],
 									"text" : "Outputs a trigger frame when audio is started."
 								}
 
@@ -4509,7 +4477,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 86.625, 105.0, 262.0, 21.0 ],
+									"patching_rect" : [ 86.625, 105.0, 249.0, 21.0 ],
 									"text" : "Outputs trigger frames at a repetitive rate."
 								}
 
@@ -4659,8 +4627,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4719,7 +4687,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4753,22 +4721,9 @@
 						"style" : "",
 						"subpatcher_template" : "default",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"title" : "Key Concepts",
 						"boxes" : [ 							{
-								"box" : 								{
-									"fontname" : "Lato Regular",
-									"fontsize" : 13.0,
-									"id" : "obj-10",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 134.0, 570.0, 147.0 ],
-									"text" : "The most important concepts to understand in FrameLib:\n\n1. EVERYTHING is strongly timed.\n2. NOTHING happens without a FrameLib timing source otherwise known as a 'scheduler'.\n\nSchedulers create trigger frames - think of them like the bang of FrameLib. Under the hood, a trigger frame is just an empty or zero length frame that contains no samples. Frames containing samples can also act as trigger frames, but these won't have been produced without another scheduler triggering some sort of generator."
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"fontface" : 1,
 									"fontname" : "Lato Regular",
@@ -4777,7 +4732,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 90.0, 416.0, 30.0 ],
+									"patching_rect" : [ 180.0, 90.0, 208.0, 30.0 ],
 									"text" : "Schedulers and Timing"
 								}
 
@@ -4822,8 +4777,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 330.0, 577.0, 131.0 ],
-									"text" : "FrameLib objects have variables with state known as parameters. Parameters are referred to by name and are used for values that may not vary over a single frame. However, they make take more than one value, or non-numeric values such as a string referring to a buffer name. The parameter system is used to change object behaviour without requiring an unmanageable number of inlets and to separate configuration of 'mode' type control from normal inputs. The parameter system is a lot like the attribute system, but it operates in the strongly-timed way that FrameLib frames do. As parameters are unique to FrameLib, there is a specialised mechanism for dealing with them - primarily through the object fl.tag~."
+									"patching_rect" : [ 180.0, 405.0, 577.0, 131.0 ],
+									"text" : "FrameLib objects have variables with state known as parameters. Parameters are referred to by name and are used for values that may not vary over a single frame. However, they make take more than one value, or non-numeric values such as a string referring to a buffer name. The parameter system is used to change object behaviour without requiring an unmanageable number of inlets and to separate configuration of 'mode' type control from normal inputs. The parameter system is a lot like the attribute system in Max, but it operates in the strongly-timed way that FrameLib frames do. As parameters are unique to FrameLib, there is a specialised mechanism for dealing with them - primarily through the object fl.tag~."
 								}
 
 							}
@@ -4836,7 +4791,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 285.0, 418.0, 30.0 ],
+									"patching_rect" : [ 180.0, 360.0, 110.0, 30.0 ],
 									"text" : "Parameters"
 								}
 
@@ -4863,7 +4818,21 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 180.0, 15.0, 570.0, 59.0 ],
-									"text" : "The basics"
+									"text" : "The Basics"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Lato Regular",
+									"fontsize" : 13.0,
+									"id" : "obj-10",
+									"linecount" : 13,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 180.0, 134.0, 570.0, 209.0 ],
+									"text" : "The most important concepts to understand in FrameLib:\n\n1. EVERYTHING is strongly timed.\n\nTiming in FrameLib is sub-sample accurate. Frames are timed to a minute fraction of a sample, allowing very precise control over processes and their timing\n\n2. NOTHING happens without a FrameLib timing source otherwise known as a 'scheduler'.\n\nSchedulers create trigger frames - think of them like the bang of FrameLib. Under the hood, a trigger frame is just an empty or zero length frame that contains no samples. Frames containing samples can also act as trigger frames, but these won't have been produced without another scheduler triggering some sort of generator."
 								}
 
 							}
@@ -4926,8 +4895,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4998,18 +4967,34 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-5::obj-5::obj-50" : [ "live.gain~[1]", "Volume", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "fl.tutnav.maxpat",
-				"bootpath" : "~/dev/FrameLib/Current Test Version/FrameLib/misc",
+				"bootpath" : "~/Documents/Max Externals/FrameLib/Current Test Version/FrameLib/misc",
 				"patcherrelativepath" : "../../misc",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "FL_tutorial_names.txt",
-				"bootpath" : "~/dev/FrameLib/Current Test Version/FrameLib/docs/tutorial-patchers",
+				"bootpath" : "~/Documents/Max Externals/FrameLib/Current Test Version/FrameLib/docs/tutorial-patchers",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fl-mono-h.maxpat",
+				"bootpath" : "~/Documents/Max Externals/FrameLib/Current Test Version/FrameLib/docs/tutorial-patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -5073,7 +5058,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fl.times~.mxo",
+				"name" : "fl.*~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -5109,11 +5094,11 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fl.plus~.mxo",
+				"name" : "fl.+~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fl.divide~.mxo",
+				"name" : "fl./~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -5179,8 +5164,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
